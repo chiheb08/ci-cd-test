@@ -20,10 +20,10 @@ jobs:
 
       - name: Build and tag Docker images
         run: |
-          docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd:latest
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd:latest ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd:${{ github.run_number }}
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd:${{ github.run_number }}
 
       - name: Push images to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd:${{ github.run_number }}
