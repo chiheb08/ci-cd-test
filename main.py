@@ -2,6 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np 
 
-st.title('CI/CD pipeline test')
+st.title('CI/CD pipeline test 2') 
 
 
